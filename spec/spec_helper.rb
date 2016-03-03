@@ -46,6 +46,14 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Including to test requests
+  config.include Request::JsonHelpers, :type => :controller
+  config.include Request::HeadersHelpers, :type => :controller
+
+  config.before(:each, type: :controller) do
+    include_default_accept_headers
+  end
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -56,7 +64,7 @@ RSpec.configure do |config|
   #     describe UsersController, :type => :controller do
   #       # ...
   #     end
-  #
+  
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
