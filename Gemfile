@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -19,6 +21,12 @@ gem 'jquery-rails'
 
 #Api gems
 gem 'active_model_serializers'
+
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails'
+gem 'furatto'
+gem 'font-awesome-rails'
+gem 'simple_form'
 
 
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -36,6 +44,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+  gem "shoulda-matchers"
+  
 end
 
 group :development do
@@ -47,9 +58,10 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails", "~> 2.14"
+  
   gem "factory_girl_rails"
   gem 'ffaker'
+  
 end
 
 
