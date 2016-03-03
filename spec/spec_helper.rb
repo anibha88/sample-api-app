@@ -56,7 +56,8 @@ RSpec.configure do |config|
   #     describe UsersController, :type => :controller do
   #       # ...
   #     end
-  #
+  # Including to test requests
+  config.include Request::JsonHelpers, :type => :controller
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
